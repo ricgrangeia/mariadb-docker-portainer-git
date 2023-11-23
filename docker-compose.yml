@@ -1,0 +1,25 @@
+version: '3.7'
+
+volumes:
+  database-data:
+    name: ${DATABASE_VOLUME_NAME}
+
+networks:
+  internal:
+    name: ${NETWORK_NAME}
+    external: true
+
+services:
+
+  database_data:
+    image: mariadb:latest
+    container_name: ${CONTAINER_NAME}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DATABASE_NAME}
+      - MYSQL_USER=${DATABASE_USERNAME}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+    volumes:
+      - database-data:/var/lib/mysql
+    networks:
+      - internal
