@@ -3,7 +3,7 @@
 
 view .env file example
 
-On Portainsr, add a new stack,
+On Portainer, add a new stack, set stack name,
  - choose Repository
 ![build_method.png](resources%2Fbuild_method.png)
  - set Git repository
@@ -11,4 +11,9 @@ On Portainsr, add a new stack,
 - add environment variables
 ![environment_variables.png](resources%2Fenvironment_variables.png)
 
+Don't forget to create or check existing network
+
 On the end, click on "Deploy the stack"
+
+### Author
+- [x] Github [**ricgrangeia**] (ricardograngeia@gmail.com)
