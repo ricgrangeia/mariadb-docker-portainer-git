@@ -2,7 +2,7 @@ version: '3.7'
 
 volumes:
   database-data:
-    name: ${DATABASE_VOLUME_NAME}
+    name: ${VOLUME_DATABASE_NAME}
 
 networks:
   internal:
