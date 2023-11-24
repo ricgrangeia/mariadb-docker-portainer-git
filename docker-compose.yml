@@ -12,14 +12,30 @@ networks:
 services:
 
   database_data:
-    image: mariadb:latest
+    image: mariadb
     container_name: ${CONTAINER_NAME}
     environment:
-      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
+      - MYSQL_ROOT_PASSWORD="root"
       - MYSQL_DATABASE=${DATABASE_NAME}
       - MYSQL_USER=${DATABASE_USERNAME}
       - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_TCP_PORT=3306
+      - PMA_HOST=mysql
     volumes:
       - database-data:/var/lib/mysql
-    networks:
-      - internal
+#    networks:
+#      - internal
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    environment:
+#      PMA_HOST: db
+#      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+#    networks:
+#      - internal
+    ports:
+      - 8087:80
