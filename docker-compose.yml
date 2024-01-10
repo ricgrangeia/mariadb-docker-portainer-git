@@ -12,9 +12,10 @@ networks:
 
 services:
 
-  database_data:
+  database:
     image: mariadb:latest
     container_name: ${CONTAINER_NAME}
+    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
       - MYSQL_DATABASE=${DATABASE_NAME}
