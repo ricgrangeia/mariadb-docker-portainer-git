@@ -13,11 +13,10 @@ networks:
 services:
 
   database:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: mariadb:latest
     container_name: ${CONTAINER_NAME}
     restart: always
+    command: bash -c "apt update && apt install mysql-client"
     environment:
       - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
       - MYSQL_DATABASE=${DATABASE_NAME}
