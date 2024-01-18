@@ -5,4 +5,5 @@ FROM mariadb:latest
 ENV PACKAGES mysql-client
 # Install Packages
 RUN apt-get update && apt-get install -y $PACKAGES
+CMD ["mariadbd"]
 
