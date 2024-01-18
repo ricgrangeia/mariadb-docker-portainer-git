@@ -13,9 +13,7 @@ networks:
 services:
 
   database:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: mariadb:latest
     container_name: ${CONTAINER_NAME}
     restart: always
     environment:
