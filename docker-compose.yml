@@ -18,7 +18,6 @@ services:
       dockerfile: Dockerfile
     container_name: ${CONTAINER_NAME}
     restart: always
-    command: bash -c "apt update && apt install -y mysql-client"
     environment:
       - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
       - MYSQL_DATABASE=${DATABASE_NAME}
