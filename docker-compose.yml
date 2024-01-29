@@ -23,7 +23,7 @@ services:
       - MYSQL_PASSWORD=${DATABASE_PASSWORD}
     volumes:
       - database-data:/var/lib/mysql
-      - './etc/mysql/:/etc/mysql/'
-#      - './etc/mysql/my.cnf:/etc/mysql/my.cnf'
+      - './etc/mysql/mariadb.conf.d/50-server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf'
+      - './etc/mysql/my.cnf:/etc/mysql/my.cnf'
     networks:
       - internal
