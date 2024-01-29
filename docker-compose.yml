@@ -13,6 +13,7 @@ networks:
 services:
 
   database:
+    image: mariadb:latest
     container_name: ${CONTAINER_NAME}
     restart: always
     environment:
