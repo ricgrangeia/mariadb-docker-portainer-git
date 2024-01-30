@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.5'
 
 volumes:
   database-data:
@@ -13,7 +13,6 @@ services:
 
   database:
     image: mariadb:latest
-    pull_policy: build
     container_name: ${CONTAINER_NAME}
     restart: always
     environment:
