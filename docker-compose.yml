@@ -3,7 +3,7 @@ version: '3.7'
 volumes:
   database-data:
     name: ${VOLUME_DATABASE_NAME}
-    extrenal: true
+    external: true
 
 networks:
   internal:
