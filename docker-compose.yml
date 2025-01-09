@@ -12,8 +12,9 @@ networks:
 services:
 
   database:
-    image: mariadb:latest
     container_name: ${CONTAINER_NAME}
+    build: .
+    pull_policy: build
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
@@ -22,6 +23,8 @@ services:
       - MYSQL_PASSWORD=${DATABASE_PASSWORD}
     volumes:
       - database-data:/var/lib/mysql
+      #- ./50-server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf
+      #- './my.cnf:/etc/mysql/my.cnf'
     networks:
       - internal
 
