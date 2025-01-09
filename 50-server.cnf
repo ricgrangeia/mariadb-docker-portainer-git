@@ -84,8 +84,6 @@ skip_name_resolve
 socket                          = /var/run/mysqld/mysqld.sock
 tmpdir                          = /tmp
 user                            = mysql
-character-set-server            = utf8mb4
-collation-server                = utf8mb4_general_ci
 
 # === SQL Compatibility Mode ===
 # Enable for b/c with databases created in older MySQL/MariaDB versions
