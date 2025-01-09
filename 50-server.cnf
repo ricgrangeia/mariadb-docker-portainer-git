@@ -197,7 +197,7 @@ disable_log_bin                 = 1     # Binary logging disabled by default
 #binlog_expire_logs_seconds     = 86400 # Keep logs for 1 day (in seconds) - For MySQL 8+ & MariaDB 10.6+ only
 
 # === Error & Slow Query Logging ===
-log_error                       =  /tmp/err.log #/proc/1/fd/2 #/var/lib/mysql/mysql_error.log
+log_error                       = /var/lib/mysql/mysql_error.log
 log_queries_not_using_indexes   = 0     # Disabled on production
 long_query_time                 = 5
 slow_query_log                  = 0     # Disabled on production
