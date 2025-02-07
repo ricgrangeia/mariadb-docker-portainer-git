@@ -29,8 +29,9 @@ services:
     networks:
       - internal
 
-#    healthcheck:
-#      test: [ "CMD", "mariadb-admin", "ping", "-h", "localhost" ]
-#      interval: 10s
-#      timeout: 15s
-#      retries: 5
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
