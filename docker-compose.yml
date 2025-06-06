@@ -28,6 +28,9 @@ services:
       #- './my.cnf:/etc/mysql/my.cnf'
     networks:
       - internal
+      
+    ports:
+      - ${DATABASE_PORT}:3306
 
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
@@ -35,3 +38,4 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
+
